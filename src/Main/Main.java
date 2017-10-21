@@ -12,10 +12,7 @@ public class Main {
 		NumberInput input=new NumberInput();
 		long number=input.inputLong();
 		PrimeResolving primeResolving=new PrimeResolving(number);
-		primeResolving.primeFactor();
-		//primeResolving.checkPrimes(number);
-		
-		
+		primeResolving.primeFactor();		
 	}
 
 }
