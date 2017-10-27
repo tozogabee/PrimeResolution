@@ -70,16 +70,18 @@ public class PrimeResolving {
 		return primeSet;
 	}
 	
-	public void primeFactor()
+	public List<Long> primeFactor()
 	{
+		List<Long> divisors=new ArrayList<>();
 		while (this.number>1)
 		{
-			for(int i=2;i<=this.number;++i)
+			for(long i=2;i<=this.number;++i)
 			{
 				if(isPrime(i))
 				{
 					if(this.number%i==0)
 					{
+						divisors.add(i);
 						System.out.format("%9d|%d\n",this.number,i);
 						this.number/=i;
 					}
@@ -90,7 +92,12 @@ public class PrimeResolving {
 				System.out.format("%9d|\n",this.number);
 			}
 		}
+		return divisors;
 	}
+
+
+
+
 	
 
 
