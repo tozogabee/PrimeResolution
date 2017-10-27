@@ -26,6 +26,7 @@ public class NumberInput {
 			System.out.println("This is not an integer number");
 			throw new NoNumberException();
 		}
+
 	}
 	
 	public long inputLong() {
@@ -40,7 +41,8 @@ public class NumberInput {
 			}
 			catch(NoNumberException e)
 			{
-				System.out.println("NoNumberException\n");
+
+				System.out.println("NoNumberException");
 				invalidInput=true;
 			}		
 		}while(invalidInput);

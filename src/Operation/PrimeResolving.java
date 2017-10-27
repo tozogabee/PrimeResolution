@@ -48,47 +48,50 @@ public class PrimeResolving {
 		{
 			if(isPrime(i))
 			{
+				System.out.println("prime divisor- "+i);
 				primes.add(i);
 			}
 		}	
 		return primes;			
 	}
-	
-	public void primeFactor() 
+
+	private List<Long> primeSetOptimized(long number)
 	{
-		List<Long> primeSet = primeSet(number);
-		while(this.number>1)
-		{	
-			long smallestPrimeNumber = smallestPrimeNumber(number, primeSet);
-			System.out.format("%9d|%d\n", this.number,smallestPrimeNumber);
-			this.number/=smallestPrimeNumber;
-		}		
-		if(this.number==1)
-		{
-			System.out.format("%9d|",this.number);
-		}
+		List<Long> primeSet=new ArrayList<>();
+		long div=2;
+
+		while(div<this.number) {
+				if (isPrime(div)) {
+					primeSet.add(div);
+				}
+				++div;
+			}
+
+		return primeSet;
 	}
 	
-	private long smallestPrimeNumber(long number,List<Long>primeSet)
+	public void primeFactor()
 	{
-		for(Long prime : primeSet)
+		while (this.number>1)
 		{
-			if(number%prime==0)
+			for(int i=2;i<=this.number;++i)
 			{
-				return prime;
+				if(isPrime(i))
+				{
+					if(this.number%i==0)
+					{
+						System.out.format("%9d|%d\n",this.number,i);
+						this.number/=i;
+					}
+				}
+			}
+			if(this.number==1)
+			{
+				System.out.format("%9d|\n",this.number);
 			}
 		}
-		throw new IllegalStateException("No prime factor found for the "+number);
 	}
 	
-	public void checkPrimes(long number)
-	{
-		List<Long> primeset=primeSet(number);
-		
-		for(Long primes : primeset)
-		{
-			System.out.println(primes+",");
-		}
-	}
+
 
 }
