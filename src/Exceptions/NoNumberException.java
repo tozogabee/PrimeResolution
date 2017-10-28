@@ -1,4 +1,4 @@
-package Operation;
+package Exceptions;
 
 public class NoNumberException extends Exception {
 
