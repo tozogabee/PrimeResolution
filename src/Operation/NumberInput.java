@@ -8,15 +8,14 @@ import java.util.Scanner;
 public class NumberInput {
 	
 	long number;
-	Scanner scanner;
+	private static Scanner scanner=new Scanner(System.in);
 
-	public NumberInput() {
-		this.scanner=new Scanner(System.in);
+	public NumberInput(){
 	}
 	
 	private long readLong() throws NoNumberException
 	{
-		this.scanner=new Scanner(System.in);
+		//this.scanner=new Scanner(System.in);
 		try
 		{
 			this.number=scanner.nextLong();

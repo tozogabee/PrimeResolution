@@ -51,7 +51,6 @@ public class DivisorMultiple {
         long result=0;
 
         return result;
-
     }
 
 

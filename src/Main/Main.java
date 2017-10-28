@@ -13,8 +13,8 @@ public class Main {
 	{
 		System.out.println("Please give me number greater than 0,if the input is 0,the program will exit\n");
 		long number=0;
+        NumberInput input=new NumberInput();
 		do {
-			NumberInput input=new NumberInput();
 			number=input.inputLong();
 			PrimeResolving primeResolving=new PrimeResolving(number);
 			List<Long> divisors=primeResolving.primeFactor();
