@@ -29,11 +29,11 @@ public class NumberInput {
 
 	}
 	
-	public long inputLong() {
+	public long inputLong(String msg) {
 		boolean invalidInput=false;
 		long number=0;
 		do {
-			System.out.println("Please give me the integer value - ");
+			System.out.print(msg);
 			try
 			{
 				number=this.readLong();
